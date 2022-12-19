@@ -1,0 +1,50 @@
+{
+  "name": "new-nodejs-app",
+  "version": "1.0.0",
+  "description": "NodeJs REST API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development nodemon --exec babel-node ./src/app.js",
+    "clean:dist": "rm -rf dist && mkdir dist",
+    "build-server": "babel -d ./dist ./src",
+    "build": "npm run clean:dist && npm run build-server",
+    "start": "NODE_ENV=development nodemon --exec babel-node ./src/app.js",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "db:migrate:seed": "node_modules/.bin/sequelize db:seed:all",
+    "db:init": "node_modules/.bin/sequelize init"
+  },
+  "keywords": [
+    "NodeJS",
+    "generate-node-project"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "2.8.5",
+    "dotenv": "8.2.0",
+    "ejs": "^3.1.8",
+    "express": "4.17.1",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "6.3.5",
+    "sequelize-cli": "6.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.2",
+    "@babel/node": "7.7.0",
+    "@babel/preset-env": "7.7.1",
+    "@babel/register": "7.7.0",
+    "eslint": "6.6.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.7.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "nodemon": "2.0.0"
+  }
+}
