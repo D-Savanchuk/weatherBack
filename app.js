@@ -8,6 +8,7 @@ const cors = require('cors');
 const { NOT_FOUND, INTERNAL_SERVICE_ERROR } = require('./constants/responseStatuses');
 
 const authRouter = require('./routes/authRouter');
+const weatherRouter = require('./routes/weatherRouter');
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/api/auth', authRouter);
+app.use('/api/weather', weatherRouter);
 
 
 app.use((req, res, next) => {
